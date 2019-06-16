@@ -1,12 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+// react-redux
+import {Provider} from 'react-redux';
+import {createStore} from 'redux';
+// my code
+import App from './components/App';
+import reducers from './reducers'
+// if you don't specify a file, webpack will auto-give your 
+// index.js
+import {selectSong} from '../actions';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <Provider store={createStore(reducers)}>
+    <App />
+    </Provider>,
+  document.querySelector('#root'));
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
