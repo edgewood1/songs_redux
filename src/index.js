@@ -8,7 +8,7 @@ import App from './components/App';
 import reducers from './reducers'
 // if you don't specify a file, webpack will auto-give your 
 // index.js
-import {selectSong} from '../actions';
+// import {selectSong} from '../actions';
 
 ReactDOM.render(
   <Provider store={createStore(reducers)}>
